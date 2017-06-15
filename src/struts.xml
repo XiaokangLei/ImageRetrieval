@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<!-- 当struts的配置文件修改后，系统是否自动重新加载该文件，默认值为false(生产环境下使用)，开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	
+	<!-- 包继承struts-default -->
+	<package name="Struts2_AJAX_DEMO" extends="struts-default">
+	    
+		<!-- 文件上传Action -->
+		<action name="uploadfile" class="com.action.UploadFileAction"
+			method="upload">
+			<result name="success">/uploadOK.jsp</result>
+		</action>
+		
+		<!-- 边缘检测Action -->
+		<action name="sharpeningfile" class="com.action.UploadFileAction"
+			method="sharpening">
+			<result name="success">/SharpeningOK.jsp</result>
+		</action>
+		
+		<!-- 基于一维直方图特征的图像检索Action -->
+		<action name="Histogram" class="com.action.HistogramIdentificationAction"
+			method="HistogramIdentification">
+			<result name="success">/HistogramOK.jsp</result>
+		</action>
+		
+		<!-- 基于三维直方图特征的图像检索Action -->
+		<action name="Histogram2" class="com.action.HistogramIdentificationAction"
+			method="HistogramIdentification2">
+			<result name="success">/HistogramOK2.jsp</result>
+		</action>
+		
+		<!-- 欧式距离直方图特征的图像检索Action -->
+		<action name="Histogram3" class="com.action.HistogramIdentificationAction"
+			method="HistogramIdentification3">
+			<result name="success">/HistogramOK3.jsp</result>
+		</action>
+		
+		<!-- 欧式距离直方图特征的图像检索Action -->
+		<action name="Histogram4" class="com.action.HistogramIdentificationAction"
+			method="HistogramIdentification4">
+			<result name="success">/HistogramOK4.jsp</result>
+		</action>
+		
+		<!-- 纹理Action -->
+		<action name="Texture" class="com.action.TextureIdentificationAction"
+			method="TextureIdentification">
+			<result name="success">/TextureOK.jsp</result>
+		</action>
+		
+		<!-- PHash Action -->
+		<action name="PHash" class="com.action.PHashIdentificationAction"
+			method="PHashIdentification">
+			<result name="success">/PHashOK.jsp</result>
+		</action>
+		
+		<!-- HSV Action -->
+		<action name="HSV" class="com.action.HSVColorHistogramAction"
+			method="HSVIdentification">
+			<result name="success">/HSVOK.jsp</result>
+		</action>
+		
+		<!-- Shape Action -->
+		<action name="Shape" class="com.action.ShapeIdentificationAction"
+			method="ShapeIdentification">
+			<result name="success">/ShapeOK.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>
